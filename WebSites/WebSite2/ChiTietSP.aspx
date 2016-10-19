@@ -64,5 +64,36 @@
     - Warranty: STANDARD WARRANTY: 1 Year Parts WARRANTY </br>
     - Service: 3 Years FREE Service Plan (INCLUDES LABOR AND LIFETIME TECHNICAL SUPPORT) </br>
     - Rush Service: Standard Process Time: Ship within 7 to 12 Business Day
-</p>
+    </p>
+    <asp:DetailsView runat="server" Height="50px" Width="125px" AllowPaging="True" AutoGenerateRows="False" DataKeyNames="MaSP" DataSourceID="SqlDataSource1">
+        <Fields>
+            <asp:BoundField DataField="MaSP" HeaderText="MaSP" ReadOnly="True" SortExpression="MaSP" />
+            <asp:BoundField DataField="MaLSP" HeaderText="MaLSP" SortExpression="MaLSP" />
+            <asp:BoundField DataField="TenSP" HeaderText="TenSP" SortExpression="TenSP" />
+            <asp:BoundField DataField="MoTa" HeaderText="MoTa" SortExpression="MoTa" />
+            <asp:BoundField DataField="Gia" HeaderText="Gia" SortExpression="Gia" />
+            <asp:BoundField DataField="DonViPhanLoai" HeaderText="DonViPhanLoai" SortExpression="DonViPhanLoai" />
+        </Fields>
+    </asp:DetailsView> 
+    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:Gaming PCConnectionString2 %>" DeleteCommand="DELETE FROM [SanPham] WHERE [MaSP] = @MaSP" InsertCommand="INSERT INTO [SanPham] ([MaSP], [MaLSP], [TenSP], [MoTa], [Gia], [DonViPhanLoai]) VALUES (@MaSP, @MaLSP, @TenSP, @MoTa, @Gia, @DonViPhanLoai)" SelectCommand="SELECT [MaSP], [MaLSP], [TenSP], [MoTa], [Gia], [DonViPhanLoai] FROM [SanPham]" UpdateCommand="UPDATE [SanPham] SET [MaLSP] = @MaLSP, [TenSP] = @TenSP, [MoTa] = @MoTa, [Gia] = @Gia, [DonViPhanLoai] = @DonViPhanLoai WHERE [MaSP] = @MaSP">
+        <DeleteParameters>
+            <asp:Parameter Name="MaSP" Type="Int32" />
+        </DeleteParameters>
+        <InsertParameters>
+            <asp:Parameter Name="MaSP" Type="Int32" />
+            <asp:Parameter Name="MaLSP" Type="Int32" />
+            <asp:Parameter Name="TenSP" Type="String" />
+            <asp:Parameter Name="MoTa" Type="String" />
+            <asp:Parameter Name="Gia" Type="Decimal" />
+            <asp:Parameter Name="DonViPhanLoai" Type="String" />
+        </InsertParameters>
+        <UpdateParameters>
+            <asp:Parameter Name="MaLSP" Type="Int32" />
+            <asp:Parameter Name="TenSP" Type="String" />
+            <asp:Parameter Name="MoTa" Type="String" />
+            <asp:Parameter Name="Gia" Type="Decimal" />
+            <asp:Parameter Name="DonViPhanLoai" Type="String" />
+            <asp:Parameter Name="MaSP" Type="Int32" />
+        </UpdateParameters>
+    </asp:SqlDataSource>    
 </asp:Content>
