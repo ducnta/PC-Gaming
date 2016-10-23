@@ -41,34 +41,7 @@
             <asp:HyperLink runat="server" ID="RegisterHyperLink" ViewStateMode="Disabled">Đăng ký</asp:HyperLink>
             nếu bạn không có tài khoản.
         </p>
-        <asp:DetailsView runat="server" Height="50px" Width="125px" AutoGenerateRows="False" DataKeyNames="MaKH" DataSourceID="SqlDataSource1">
-            <Fields>
-                <asp:BoundField DataField="MaKH" HeaderText="MaKH" ReadOnly="True" SortExpression="MaKH" />
-                <asp:BoundField DataField="HoTen" HeaderText="HoTen" SortExpression="HoTen" />
-                <asp:BoundField DataField="SDT" HeaderText="SDT" SortExpression="SDT" />
-                <asp:BoundField DataField="Email" HeaderText="Email" SortExpression="Email" />
-                <asp:BoundField DataField="Diachi" HeaderText="Diachi" SortExpression="Diachi" />
-            </Fields>
-        </asp:DetailsView>
-        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:Gaming PCConnectionString %>" DeleteCommand="DELETE FROM [KhachHang] WHERE [MaKH] = @MaKH" InsertCommand="INSERT INTO [KhachHang] ([MaKH], [HoTen], [SDT], [Email], [Diachi]) VALUES (@MaKH, @HoTen, @SDT, @Email, @Diachi)" SelectCommand="SELECT [MaKH], [HoTen], [SDT], [Email], [Diachi] FROM [KhachHang]" UpdateCommand="UPDATE [KhachHang] SET [HoTen] = @HoTen, [SDT] = @SDT, [Email] = @Email, [Diachi] = @Diachi WHERE [MaKH] = @MaKH">
-            <DeleteParameters>
-                <asp:Parameter Name="MaKH" Type="Int32" />
-            </DeleteParameters>
-            <InsertParameters>
-                <asp:Parameter Name="MaKH" Type="Int32" />
-                <asp:Parameter Name="HoTen" Type="String" />
-                <asp:Parameter Name="SDT" Type="String" />
-                <asp:Parameter Name="Email" Type="String" />
-                <asp:Parameter Name="Diachi" Type="String" />
-            </InsertParameters>
-            <UpdateParameters>
-                <asp:Parameter Name="HoTen" Type="String" />
-                <asp:Parameter Name="SDT" Type="String" />
-                <asp:Parameter Name="Email" Type="String" />
-                <asp:Parameter Name="Diachi" Type="String" />
-                <asp:Parameter Name="MaKH" Type="Int32" />
-            </UpdateParameters>
-        </asp:SqlDataSource>
+
     </section>
     <section id="socialLoginForm">
         <h2>Dùng một dịch vụ khác để đăng nhập.</h2>
